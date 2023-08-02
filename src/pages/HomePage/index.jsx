@@ -49,6 +49,7 @@ export const HomePage = ({}) => {
       (cartProduct) => cartProduct.id !== cartProductId
     );
     setCartList(newCartList);
+
     toast.warn("Item removido com sucesso");
   };
 
@@ -65,6 +66,7 @@ export const HomePage = ({}) => {
             removeProductFromCart={removeProductFromCart}
             cartList={cartList}
             setIsVisible={setIsVisible}
+            setCartList={setCartList}
           />
         ) : null}
       </main>

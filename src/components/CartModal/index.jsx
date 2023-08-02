@@ -1,5 +1,6 @@
 import { MdClose } from "react-icons/md";
 import { CartItemCard } from "./CartItemCard";
+import { toast } from "react-toastify";
 
 export const CartModal = ({
   cartList,
@@ -24,24 +25,35 @@ export const CartModal = ({
       </div>
       <div>
         <ul>
-          {cartList.map((product) => (
-            <CartItemCard
-              removeProductFromCart={removeProductFromCart}
-              key={product.id}
-              product={product}
-            />
-          ))}
+          {cartList.length > 0 ? (
+            cartList.map((product) => (
+              <CartItemCard
+                removeProductFromCart={removeProductFromCart}
+                key={product.id}
+                product={product}
+              />
+            ))
+          ) : (
+            <div>
+              <h3>Sua sacola está vazia</h3>
+              <p>Adicione itens</p>
+            </div>
+          )}
         </ul>
       </div>
       <div>
         <div>
-          <span>Total</span>
-          <span>
-            {total.toLocaleString("pt-BR", {
-              style: "currency",
-              currency: "BRL",
-            })}
-          </span>
+          {cartList.length > 0 ? (
+            <>
+              <span>Total</span>
+              <span>
+                {total.toLocaleString("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+              </span>
+            </>
+          ) : null}
         </div>
         <button>Remover todos</button>
       </div>
