@@ -6,12 +6,11 @@ import { kenzieBurguerApi } from "../../services/api";
 
 export const HomePage = ({}) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [productList, setProductList] = useState([]);
   const [cartList, setCartList] = useState([]);
-  const [loading, setLoading] = useState(false);
 
-  // useEffect de montagem:
-
+  console.log(cartList);
   useEffect(() => {
     const getProducts = async () => {
       try {
@@ -34,11 +33,31 @@ export const HomePage = ({}) => {
   // filtro de busca
   // estilizar tudo com sass de forma responsiva
 
+  const addProductToCart = (addingcartProduct) => {
+    if (
+      !cartList.some((cartProduct) => cartProduct.id === addingcartProduct.id)
+    ) {
+      setCartList([...cartList, addingcartProduct]);
+    } else {
+      alert("Item já adicionado ao carrinho");
+    }
+  };
+
+  const removeProductFromCart = (cartProductId) => {
+    const newCartList = cartList.filter(
+      (cartProduct) => cartProduct.id !== cartProduct
+    );
+    setCartList(newCartList);
+  };
+
   return (
     <>
       <Header setIsVisible={setIsVisible} />
       <main>
-        <ProductList productList={productList} />
+        <ProductList
+          productList={productList}
+          addProductToCart={addProductToCart}
+        />
         {isVisible ? (
           <CartModal cartList={cartList} setIsVisible={setIsVisible} />
         ) : null}
