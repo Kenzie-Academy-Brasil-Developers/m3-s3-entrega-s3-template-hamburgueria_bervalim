@@ -1,11 +1,11 @@
 import { MdClose } from "react-icons/md";
 import { CartItemCard } from "./CartItemCard";
-import { toast } from "react-toastify";
 
 export const CartModal = ({
   cartList,
   setIsVisible,
   removeProductFromCart,
+  setCartList,
 }) => {
   const total = cartList.reduce((prevValue, product) => {
     return prevValue + product.price;
@@ -52,10 +52,10 @@ export const CartModal = ({
                   currency: "BRL",
                 })}
               </span>
+              <button onClick={() => setCartList([])}>Remover todos</button>
             </>
           ) : null}
         </div>
-        <button>Remover todos</button>
       </div>
     </div>
   );

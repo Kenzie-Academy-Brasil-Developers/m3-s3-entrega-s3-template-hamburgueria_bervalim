@@ -5,11 +5,18 @@ import { ProductList } from "../../components/ProductList";
 import { kenzieBurguerApi } from "../../services/api";
 import { toast } from "react-toastify";
 
-export const HomePage = ({}) => {
+export const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [loading, setLoading] = useState(false);
   const [productList, setProductList] = useState([]);
-  const [cartList, setCartList] = useState([]);
+  const localStorageCartList = JSON.parse(localStorage.getItem("@CartList"));
+  const [cartList, setCartList] = useState(
+    localStorageCartList ? localStorageCartList : []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("@CartList", JSON.stringify(cartList));
+  }, [cartList]);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -25,13 +32,6 @@ export const HomePage = ({}) => {
     };
     getProducts();
   }, []);
-
-  // useEffect montagem - carrega os produtos da API e joga em productList
-  // useEffect atualização - salva os produtos no localStorage (carregar no estado)
-  // adição, exclusão, e exclusão geral do carrinho
-  // renderizações condições e o estado para exibir ou não o carrinho
-  // filtro de busca
-  // estilizar tudo com sass de forma responsiva
 
   const addProductToCart = (addingcartProduct) => {
     if (
@@ -49,7 +49,6 @@ export const HomePage = ({}) => {
       (cartProduct) => cartProduct.id !== cartProductId
     );
     setCartList(newCartList);
-
     toast.warn("Item removido com sucesso");
   };
 
