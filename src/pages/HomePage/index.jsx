@@ -4,19 +4,24 @@ import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
 import { kenzieBurguerApi } from "../../services/api";
 
-export const HomePage = () => {
+export const HomePage = ({}) => {
+  const [isVisible, setIsVisible] = useState(false);
   const [productList, setProductList] = useState([]);
   const [cartList, setCartList] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   // useEffect de montagem:
 
   useEffect(() => {
     const getProducts = async () => {
       try {
+        setLoading(true);
         const { data } = await kenzieBurguerApi.get("products");
         setProductList(data);
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     };
     getProducts();
@@ -31,10 +36,12 @@ export const HomePage = () => {
 
   return (
     <>
-      <Header />
+      <Header setIsVisible={setIsVisible} />
       <main>
         <ProductList productList={productList} />
-        <CartModal cartList={cartList} />
+        {isVisible ? (
+          <CartModal cartList={cartList} setIsVisible={setIsVisible} />
+        ) : null}
       </main>
     </>
   );
