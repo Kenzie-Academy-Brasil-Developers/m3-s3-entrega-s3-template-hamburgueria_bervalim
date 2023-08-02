@@ -2,7 +2,7 @@ import { useState } from "react";
 import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 
-export const Header = ({ setIsVisible }) => {
+export const Header = ({ setIsVisible, cartList }) => {
   const [value, setValue] = useState("");
 
   return (
@@ -11,7 +11,7 @@ export const Header = ({ setIsVisible }) => {
       <div>
         <button onClick={() => setIsVisible(true)}>
           <MdShoppingCart size={21} />
-          <span>0</span>
+          <span>{cartList.length}</span>
         </button>
         <form>
           <input

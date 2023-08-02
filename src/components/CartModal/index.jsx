@@ -1,5 +1,6 @@
 import { MdClose } from "react-icons/md";
 import { CartItemCard } from "./CartItemCard";
+import { toast } from "react-toastify";
 
 export const CartModal = ({
   cartList,
@@ -52,7 +53,14 @@ export const CartModal = ({
                   currency: "BRL",
                 })}
               </span>
-              <button onClick={() => setCartList([])}>Remover todos</button>
+              <button
+                onClick={() => {
+                  setCartList([]);
+                  toast.warn("Todos os itens já foram removidos");
+                }}
+              >
+                Remover todos
+              </button>
             </>
           ) : null}
         </div>
