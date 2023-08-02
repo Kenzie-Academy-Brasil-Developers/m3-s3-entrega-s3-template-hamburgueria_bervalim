@@ -46,9 +46,10 @@ export const HomePage = ({}) => {
 
   const removeProductFromCart = (cartProductId) => {
     const newCartList = cartList.filter(
-      (cartProduct) => cartProduct.id !== cartProduct
+      (cartProduct) => cartProduct.id !== cartProductId
     );
     setCartList(newCartList);
+    toast.warn("Item removido com sucesso");
   };
 
   return (
@@ -60,7 +61,11 @@ export const HomePage = ({}) => {
           addProductToCart={addProductToCart}
         />
         {isVisible ? (
-          <CartModal cartList={cartList} setIsVisible={setIsVisible} />
+          <CartModal
+            removeProductFromCart={removeProductFromCart}
+            cartList={cartList}
+            setIsVisible={setIsVisible}
+          />
         ) : null}
       </main>
     </>
