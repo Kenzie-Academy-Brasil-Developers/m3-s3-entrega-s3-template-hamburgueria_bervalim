@@ -3,6 +3,7 @@ import { CartModal } from "../../components/CartModal";
 import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
 import { kenzieBurguerApi } from "../../services/api";
+import { toast } from "react-toastify";
 
 export const HomePage = ({}) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,7 +11,6 @@ export const HomePage = ({}) => {
   const [productList, setProductList] = useState([]);
   const [cartList, setCartList] = useState([]);
 
-  console.log(cartList);
   useEffect(() => {
     const getProducts = async () => {
       try {
@@ -38,8 +38,9 @@ export const HomePage = ({}) => {
       !cartList.some((cartProduct) => cartProduct.id === addingcartProduct.id)
     ) {
       setCartList([...cartList, addingcartProduct]);
+      toast.success("Item adicionado ao carrinho com sucesso");
     } else {
-      alert("Item já adicionado ao carrinho");
+      toast.error("Item já adicionado ao carrinho");
     }
   };
 
