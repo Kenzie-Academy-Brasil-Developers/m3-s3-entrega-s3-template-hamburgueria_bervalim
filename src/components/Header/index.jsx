@@ -2,8 +2,15 @@ import { useState } from "react";
 import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 
-export const Header = ({ setIsVisible, cartList }) => {
+export const Header = ({ setIsVisible, cartList, setsearchProducts }) => {
+  // Estado para capturar o que o usuário digita
   const [value, setValue] = useState("");
+
+  const submitSearchProduct = (event) => {
+    event.preventDefault();
+    setsearchProducts(value);
+    setValue("");
+  };
 
   return (
     <header>
@@ -13,7 +20,7 @@ export const Header = ({ setIsVisible, cartList }) => {
           <MdShoppingCart size={21} />
           <span>{cartList.length}</span>
         </button>
-        <form>
+        <form onSubmit={submitSearchProduct}>
           <input
             type="text"
             value={value}

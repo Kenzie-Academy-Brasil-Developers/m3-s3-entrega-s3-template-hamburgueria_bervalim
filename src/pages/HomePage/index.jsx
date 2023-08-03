@@ -13,6 +13,16 @@ export const HomePage = () => {
   const [cartList, setCartList] = useState(
     localStorageCartList ? localStorageCartList : []
   );
+  // Criando um estado para o filtro de pesquisa
+  const [searchProducts, setsearchProducts] = useState("");
+
+  const productsResult = productList.filter(
+    (product) =>
+      product.name.toLowerCase().includes(searchProducts.toLowerCase()) ||
+      product.category.toLowerCase().includes(searchProducts.toLowerCase())
+  );
+
+  const productsListExibition = searchProducts ? productsResult : productList;
 
   useEffect(() => {
     localStorage.setItem("@CartList", JSON.stringify(cartList));
@@ -54,11 +64,16 @@ export const HomePage = () => {
 
   return (
     <>
-      <Header setIsVisible={setIsVisible} cartList={cartList} />
+      <Header
+        setIsVisible={setIsVisible}
+        cartList={cartList}
+        setsearchProducts={setsearchProducts}
+      />
       <main>
         <ProductList
           productList={productList}
           addProductToCart={addProductToCart}
+          productsListExibition={productsListExibition}
         />
         {isVisible ? (
           <CartModal
