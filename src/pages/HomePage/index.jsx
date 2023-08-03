@@ -74,6 +74,7 @@ export const HomePage = () => {
           productList={productList}
           addProductToCart={addProductToCart}
           productsListExibition={productsListExibition}
+          searchProducts={searchProducts}
         />
         {isVisible ? (
           <CartModal

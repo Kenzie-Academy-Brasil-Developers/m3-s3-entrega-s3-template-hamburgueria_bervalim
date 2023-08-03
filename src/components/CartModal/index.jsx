@@ -56,7 +56,7 @@ export const CartModal = ({
               <button
                 onClick={() => {
                   setCartList([]);
-                  toast.warn("Todos os itens já foram removidos");
+                  toast.warn("Todos os itens foram removidos do carrinho");
                 }}
               >
                 Remover todos
