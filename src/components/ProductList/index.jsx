@@ -12,7 +12,11 @@ export const ProductList = ({
       {searchProducts ? (
         <>
           <h3>Resultados de busca para: {searchProducts}</h3>
-          <p>{productsListExibition.length} produto(s) foram encontrados</p>
+          {productsListExibition.length > 0 ? (
+            <p>{productsListExibition.length} produto(s) foram encontrados</p>
+          ) : (
+            <h2>Nenhum produto foi encontrado</h2>
+          )}
           <button onClick={clearFilter}>Limpar Filtro</button>
         </>
       ) : null}
