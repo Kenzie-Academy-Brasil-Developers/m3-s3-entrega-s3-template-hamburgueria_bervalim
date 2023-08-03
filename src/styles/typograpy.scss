@@ -1,0 +1,50 @@
+.title {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  color: var(--gray-600);
+
+  &.one {
+    font-size: 2.25rem;
+    line-height: 2.125rem;
+  }
+
+  &.two {
+    font-size: 1.375rem;
+    line-height: 1.5rem;
+  }
+
+  &.two.white {
+    color: #ffff;
+  }
+
+  &.three {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+}
+
+.paragraph {
+  font-family: var(--font-primary);
+
+  &.category {
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: var(--grey-300);
+  }
+
+  &.priceCard {
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: var(--color-primary);
+  }
+
+  &.priceCard.total {
+    color: var(--gray-600);
+  }
+
+  &.priceCard.priceModal {
+    color: var(--grey-300);
+  }
+}

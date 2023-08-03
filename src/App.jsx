@@ -1,6 +1,7 @@
 import { HomePage } from "./pages/HomePage";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./styles/index.scss";
 
 export const App = () => {
   return (
