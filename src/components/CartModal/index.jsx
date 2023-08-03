@@ -54,6 +54,7 @@ export const CartModal = ({
                 })}
               </span>
               <button
+                className="cardButton modal"
                 onClick={() => {
                   setCartList([]);
                   toast.warn("Todos os itens foram removidos do carrinho");

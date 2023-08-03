@@ -1,0 +1,37 @@
+.cardButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-primary);
+  border-radius: 0.5rem;
+  font-weight: 600;
+
+  &.grey.card {
+    border: 2px solid var(--grey-400);
+    color: #ffff;
+    padding: 0 1.25rem;
+    height: 2.5rem;
+    font-size: 0.875rem;
+    background-color: var(--grey-400);
+  }
+
+  &.grey.card:hover {
+    border: 2px solid var(--color-primary);
+    color: #ffff;
+    padding: 0 1.25rem;
+    height: 2.5rem;
+    font-size: 0.875rem;
+    background-color: var(--color-primary);
+  }
+
+  &.modal {
+    border: 2px solid var(--grey-400);
+    background-color: var(--grey-400);
+    font-size: 1rem;
+    width: 100%;
+    padding: 0 1.8rem;
+    height: 3.75rem;
+    color: #ffff;
+  }
+}

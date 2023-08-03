@@ -21,7 +21,9 @@ export const ProductList = ({
           ) : (
             <h1 className="title one">Nenhum produto foi encontrado</h1>
           )}
-          <button onClick={clearFilter}>Limpar Filtro</button>
+          <button className="cardButton grey card" onClick={clearFilter}>
+            Limpar Filtro
+          </button>
         </>
       ) : null}
 

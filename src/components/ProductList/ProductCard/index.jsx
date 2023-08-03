@@ -1,6 +1,8 @@
+import styles from "./style.module.scss";
+
 export const ProductCard = ({ product, addProductToCart }) => {
   return (
-    <li>
+    <li tabIndex={0} className={styles.productCard}>
       <img src={product.img} alt={product.name} />
       <div>
         <h3 className="title three">{product.name}</h3>
@@ -11,7 +13,12 @@ export const ProductCard = ({ product, addProductToCart }) => {
             currency: "BRL",
           })}
         </span>
-        <button onClick={() => addProductToCart(product)}>Adicionar</button>
+        <button
+          // className="cardButton grey card"
+          onClick={() => addProductToCart(product)}
+        >
+          Adicionar
+        </button>
       </div>
     </li>
   );
