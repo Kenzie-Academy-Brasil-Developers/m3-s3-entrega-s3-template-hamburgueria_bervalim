@@ -15,7 +15,7 @@ export const CartModal = ({
   return (
     <div role="dialog">
       <div>
-        <h2>Carrinho de compras</h2>
+        <h2 className="title three white">Carrinho de compras</h2>
         <button
           onClick={() => setIsVisible(false)}
           aria-label="close"
@@ -36,8 +36,8 @@ export const CartModal = ({
             ))
           ) : (
             <div>
-              <h3>Sua sacola está vazia</h3>
-              <p>Adicione itens</p>
+              <h2 className="title two">Sua sacola está vazia</h2>
+              <p className="paragraph priceCard total">Adicione itens</p>
             </div>
           )}
         </ul>
@@ -46,8 +46,8 @@ export const CartModal = ({
         <div>
           {cartList.length > 0 ? (
             <>
-              <span>Total</span>
-              <span>
+              <span className="paragraph priceCard total">Total</span>
+              <span className="paragraph priceCard priceModal">
                 {total.toLocaleString("pt-BR", {
                   style: "currency",
                   currency: "BRL",

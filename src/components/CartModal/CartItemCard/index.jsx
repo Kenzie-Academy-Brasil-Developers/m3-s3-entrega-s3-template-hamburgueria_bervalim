@@ -5,7 +5,7 @@ export const CartItemCard = ({ product, removeProductFromCart }) => {
     <li>
       <div>
         <img src={product.img} alt={product.name} />
-        <h3>{product.name}</h3>
+        <h3 className="title three">{product.name}</h3>
       </div>
       <button
         onClick={() => removeProductFromCart(product.id)}

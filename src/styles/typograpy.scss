@@ -6,6 +6,7 @@
   &.one {
     font-size: 2.25rem;
     line-height: 2.125rem;
+    color: #e60000;
   }
 
   &.two {
@@ -13,13 +14,16 @@
     line-height: 1.5rem;
   }
 
-  &.two.white {
-    color: #ffff;
+  &.two.green {
+    color: var(--color-primary);
   }
-
   &.three {
     font-size: 1.125rem;
     line-height: 1.5rem;
+  }
+
+  &.three.white {
+    color: #ffff;
   }
 }
 
@@ -31,6 +35,12 @@
     font-size: 0.75rem;
     line-height: 1rem;
     color: var(--grey-300);
+  }
+
+  &.search {
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--grey-100);
   }
 
   &.priceCard {

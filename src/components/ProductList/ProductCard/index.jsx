@@ -3,9 +3,9 @@ export const ProductCard = ({ product, addProductToCart }) => {
     <li>
       <img src={product.img} alt={product.name} />
       <div>
-        <h3>{product.name}</h3>
-        <span>{product.category}</span>
-        <span>
+        <h3 className="title three">{product.name}</h3>
+        <span className="paragraph category">{product.category}</span>
+        <span className="paragraph priceCard">
           {product.price.toLocaleString("pt-BR", {
             style: "currency",
             currency: "BRL",
