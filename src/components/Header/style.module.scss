@@ -1,0 +1,40 @@
+.header {
+  background-color: var(--grey-100);
+  padding: clamp(0.79rem, 3vw, 0.95rem);
+
+  .flexbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .input {
+    border-radius: 0.5rem;
+    border: 0.125rem solid var(--grey-100);
+    background-color: #ffff;
+    padding: 0.25rem 0.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input {
+    outline: none;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--gray-600);
+    font-family: var(--font-primary);
+    padding: 0 10px;
+  }
+
+  .search {
+    background-color: var(--color-primary);
+    width: 40px;
+    height: 30px;
+    border-radius: 8px;
+    color: #ffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

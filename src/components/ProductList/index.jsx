@@ -10,7 +10,7 @@ export const ProductList = ({
   return (
     <>
       {searchProducts ? (
-        <>
+        <div className="container">
           <p className="paragraph priceCard total">
             Resultados de busca para: {searchProducts}
           </p>
@@ -24,18 +24,19 @@ export const ProductList = ({
           <button className="cardButton grey card" onClick={clearFilter}>
             Limpar Filtro
           </button>
-        </>
+        </div>
       ) : null}
-
-      <ul>
-        {productsListExibition.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            addProductToCart={addProductToCart}
-          />
-        ))}
-      </ul>
+      <div className="container">
+        <ul>
+          {productsListExibition.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              addProductToCart={addProductToCart}
+            />
+          ))}
+        </ul>
+      </div>
     </>
   );
 };
