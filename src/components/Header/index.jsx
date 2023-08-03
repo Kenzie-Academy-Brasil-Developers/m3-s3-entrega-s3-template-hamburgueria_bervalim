@@ -23,10 +23,10 @@ export const Header = ({
       <div className="container">
         <div className={styles.flexbox}>
           <img src={Logo} alt="Logo Kenzie Burguer" />
-          <div>
+          <div className={styles.position}>
             <button onClick={() => setIsVisible(true)}>
               <MdShoppingCart size={21} />
-              <span>{cartList.length}</span>
+              <span className={styles.cartLength}>{cartList.length}</span>
             </button>
             <form onSubmit={submitSearchProduct} className={styles.input}>
               <input
