@@ -2,7 +2,12 @@ import { useState } from "react";
 import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 
-export const Header = ({ setIsVisible, cartList, setsearchProducts }) => {
+export const Header = ({
+  setIsVisible,
+  cartList,
+  setsearchProducts,
+  clearFilter,
+}) => {
   // Estado para capturar o que o usuário digita
   const [value, setValue] = useState("");
 

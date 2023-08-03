@@ -24,6 +24,10 @@ export const HomePage = () => {
 
   const productsListExibition = searchProducts ? productsResult : productList;
 
+  const clearFilter = () => {
+    setsearchProducts("");
+  };
+
   useEffect(() => {
     localStorage.setItem("@CartList", JSON.stringify(cartList));
   }, [cartList]);
@@ -75,6 +79,7 @@ export const HomePage = () => {
           addProductToCart={addProductToCart}
           productsListExibition={productsListExibition}
           searchProducts={searchProducts}
+          clearFilter={clearFilter}
         />
         {isVisible ? (
           <CartModal
