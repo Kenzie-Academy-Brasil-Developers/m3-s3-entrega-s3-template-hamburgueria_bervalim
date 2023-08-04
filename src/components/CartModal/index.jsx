@@ -51,13 +51,15 @@ export const CartModal = ({
           <div>
             {cartList.length > 0 ? (
               <>
-                <span className="paragraph priceCard total">Total</span>
-                <span className="paragraph priceCard priceModal">
-                  {total.toLocaleString("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  })}
-                </span>
+                <div className={styles.cardTotal}>
+                  <span className="paragraph priceCard total">Total</span>
+                  <span className="paragraph priceCard priceModal">
+                    {total.toLocaleString("pt-BR", {
+                      style: "currency",
+                      currency: "BRL",
+                    })}
+                  </span>
+                </div>
                 <button
                   className="cardButton modal"
                   onClick={() => {

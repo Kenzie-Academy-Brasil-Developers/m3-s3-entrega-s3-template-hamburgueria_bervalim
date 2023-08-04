@@ -8,9 +8,9 @@ export const CartItemCard = ({ product, removeProductFromCart }) => {
         <div className={styles.cardImage}>
           <img src={product.img} alt={product.name} />
         </div>
-        <h3 className="title three">{product.name}</h3>
       </div>
       <div className={styles.cardButton}>
+        <h3 className="title three">{product.name}</h3>
         <button
           onClick={() => removeProductFromCart(product.id)}
           aria-label="delete"
