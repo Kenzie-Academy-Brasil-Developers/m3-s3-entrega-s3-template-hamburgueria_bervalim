@@ -8,12 +8,13 @@ import { toast } from "react-toastify";
 export const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [loading, setLoading] = useState(false);
+
   const [productList, setProductList] = useState([]);
   const localStorageCartList = JSON.parse(localStorage.getItem("@CartList"));
   const [cartList, setCartList] = useState(
     localStorageCartList ? localStorageCartList : []
   );
-  // Criando um estado para o filtro de pesquisa
+
   const [searchProducts, setsearchProducts] = useState("");
 
   const productsResult = productList.filter(

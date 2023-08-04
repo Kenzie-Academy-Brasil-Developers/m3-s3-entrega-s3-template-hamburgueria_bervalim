@@ -9,7 +9,6 @@ export const Header = ({
   setsearchProducts,
   clearFilter,
 }) => {
-  // Estado para capturar o que o usuário digita
   const [value, setValue] = useState("");
 
   const submitSearchProduct = (event) => {
