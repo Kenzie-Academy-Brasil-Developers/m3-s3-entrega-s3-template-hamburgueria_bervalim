@@ -22,12 +22,14 @@ export const Header = ({
     <header className={styles.header}>
       <div className="container">
         <div className={styles.flexbox}>
-          <img src={Logo} alt="Logo Kenzie Burguer" />
-          <div className={styles.position}>
+          <figure>
+            <img src={Logo} alt="Logo Kenzie Burguer" />
             <button onClick={() => setIsVisible(true)}>
-              <MdShoppingCart size={21} />
+              <MdShoppingCart size={21} className={styles.cart} />
               <span className={styles.cartLength}>{cartList.length}</span>
             </button>
+          </figure>
+          <div className={styles.position}>
             <form onSubmit={submitSearchProduct} className={styles.input}>
               <input
                 type="text"
