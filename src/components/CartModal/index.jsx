@@ -40,40 +40,38 @@ export const CartModal = ({
                 />
               ))
             ) : (
-              <div>
-                <h2 className="title two">Sua sacola está vazia</h2>
+              <div className={styles.emptyCard}>
+                <h2 className="title one">Sua sacola está vazia</h2>
                 <p className="paragraph priceCard total">Adicione itens</p>
               </div>
             )}
           </ul>
         </div>
-        <div>
-          <div>
-            {cartList.length > 0 ? (
-              <>
-                <div className={styles.cardTotal}>
-                  <span className="paragraph priceCard total">Total</span>
-                  <span className="paragraph priceCard priceModal">
-                    {total.toLocaleString("pt-BR", {
-                      style: "currency",
-                      currency: "BRL",
-                    })}
-                  </span>
-                </div>
-                <div className={styles.removeButton}>
-                  <button
-                    className="cardButton modal"
-                    onClick={() => {
-                      setCartList([]);
-                      toast.warn("Todos os itens foram removidos do carrinho");
-                    }}
-                  >
-                    Remover todos
-                  </button>
-                </div>
-              </>
-            ) : null}
-          </div>
+        <div className={styles.removeButtonDivModal}>
+          {cartList.length > 0 ? (
+            <>
+              <div className={styles.cardTotal}>
+                <span className="paragraph priceCard total">Total</span>
+                <span className="paragraph priceCard priceModal">
+                  {total.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
+                </span>
+              </div>
+              <div className={styles.removeButton}>
+                <button
+                  className="cardButton modal"
+                  onClick={() => {
+                    setCartList([]);
+                    toast.warn("Todos os itens foram removidos do carrinho");
+                  }}
+                >
+                  Remover todos
+                </button>
+              </div>
+            </>
+          ) : null}
         </div>
       </div>
     </div>

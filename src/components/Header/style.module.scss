@@ -1,5 +1,5 @@
 .header {
-  background-color: var(--grey-100);
+  background-color: var(--grey-0);
   padding: clamp(0.79rem, 3vw, 1.1rem);
 
   .flexbox {
@@ -15,10 +15,6 @@
       justify-content: space-between;
       position: relative;
       margin: 0 2rem;
-
-      @media (max-width: 600px) {
-        // width: 91vw;
-      }
     }
 
     @media (max-width: 680px) {
@@ -38,7 +34,7 @@
     justify-content: center;
     gap: 10px;
 
-    @media (max-width: 420px) {
+    @media (max-width: 600px) {
       width: 95vw;
       padding-left: 0.7rem;
       margin-top: 13px;
