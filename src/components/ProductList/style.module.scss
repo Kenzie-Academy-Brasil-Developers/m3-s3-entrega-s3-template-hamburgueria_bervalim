@@ -8,7 +8,6 @@
   li {
     width: 90%;
     min-width: 270px;
-    // height: 410px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -28,6 +27,7 @@
 
   button {
     margin-top: 10px;
+    margin-bottom: 20px;
   }
   .image {
     display: flex;
@@ -37,8 +37,8 @@
 
   @media (min-width: 900px) {
     display: grid;
-    // grid-template-columns: repeat(4, 1fr);
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    // grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 16px;
     overflow: hidden;
   }
