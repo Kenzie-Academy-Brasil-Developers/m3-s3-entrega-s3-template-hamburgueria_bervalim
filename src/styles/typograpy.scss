@@ -4,7 +4,7 @@
   color: var(--gray-600);
 
   &.one {
-    font-size: 2.25rem;
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
     line-height: 2.125rem;
     color: #e60000;
   }
@@ -16,6 +16,7 @@
 
   &.two.green {
     color: var(--color-primary);
+    font-size: clamp(1.2rem, 4vw, 1.9rem);
   }
   &.three {
     font-size: 1.125rem;
