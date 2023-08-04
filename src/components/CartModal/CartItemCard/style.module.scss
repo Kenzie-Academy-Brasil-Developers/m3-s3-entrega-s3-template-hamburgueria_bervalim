@@ -24,6 +24,9 @@
     justify-content: space-between;
     gap: 20px;
 
+    h3 {
+      font-size: clamp(0.75rem, 4vw, 1.125rem);
+    }
     button {
       color: var(--grey-400);
       position: absolute;
