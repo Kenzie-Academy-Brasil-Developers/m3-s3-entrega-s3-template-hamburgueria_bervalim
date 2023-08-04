@@ -10,13 +10,25 @@
   .modalBox {
     width: 100%;
     max-width: 500px;
+    // height: 200px;
     background-color: #fff;
     border-radius: 5px 5px 0px 0px;
     position: relative;
+
+    &::backdrop {
+      background-color: rgba(0, 0, 0, 0.95);
+    }
   }
 
   .modalList {
     padding: 1.4rem;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
   }
 
   .modalClose {
