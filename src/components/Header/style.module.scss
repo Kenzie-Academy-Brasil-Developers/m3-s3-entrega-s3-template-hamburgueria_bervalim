@@ -59,6 +59,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 365px) {
+      position: absolute;
+      right: 5%;
+    }
   }
 
   .position {
