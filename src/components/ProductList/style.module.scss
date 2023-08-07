@@ -4,12 +4,16 @@
   overflow: auto;
   margin-right: -1rem;
   padding-right: 1rem;
-  justify-content: center;
+  // // justify-content: center;
+  // align-items: center;
 
+  // @media (min-width: 550px) {
+  //   justify-content: center;
+  // }
   li {
     width: 90%;
     min-width: 270px;
-    max-width: 300px;
+    max-width: 330px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -36,11 +40,12 @@
     justify-content: center;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 800px) {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
     overflow: hidden;
+    justify-content: center;
   }
 }
 
